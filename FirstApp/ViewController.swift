@@ -15,6 +15,8 @@ class ViewController: UIViewController {
     @IBOutlet var view1: UIView!
     
     var lightOn = true
+    var check = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         label1.lineBreakMode = .byWordWrapping
@@ -22,6 +24,21 @@ class ViewController: UIViewController {
         label1.text = "Hello, world!"
         
     }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle{
+        if(lightOn && check){
+            
+            return .lightContent
+            
+        }
+        else{
+            check = true
+            return .default
+        }
+        
+    }
+    
+    
 
     @IBAction func changeColor(){
         
@@ -30,13 +47,16 @@ class ViewController: UIViewController {
             label1.text = "WHITE"
             label1.textColor = UIColor.white
             view1.backgroundColor = UIColor.black
+            
         }
         else{
             button1.setTitle("ON",for:.normal)
             label1.text = "BLACK"
             label1.textColor = UIColor.black
             view.backgroundColor = UIColor.white
+            
         }
+        setNeedsStatusBarAppearanceUpdate()
         lightOn = !lightOn
     }
     
