@@ -26,13 +26,13 @@ class ViewController: UIViewController {
     }
 
     @IBAction func changeColor(){
-        now+=1
+        
         if let temp = MessageArray[now%(MessageArray.count)] as? String{
             self.label1.text = MessageArray[now%(MessageArray.count)] as! String
-        }else{
             now += 1
+        }else{
+            now += 2
         }
-        
         
     }
     
