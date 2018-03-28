@@ -30,15 +30,14 @@ class ViewController: UIViewController {
             label1.text = "WHITE"
             label1.textColor = UIColor.white
             view1.backgroundColor = UIColor.black
-            lightOn = false
         }
         else{
             button1.setTitle("ON",for:.normal)
             label1.text = "BLACK"
             label1.textColor = UIColor.black
             view.backgroundColor = UIColor.white
-            lightOn = true
         }
+        lightOn = !lightOn
     }
     
 }
