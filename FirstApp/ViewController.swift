@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet var view1: UIView!
     
     var now : Int = 0
-    let MessageArray = ["May the force be with you", "Live long and prosper",101,"To infinity and beyond", "Space is big. you just won't believe how vastly, hugely, mindbogglinly big it is and the world is very big and huge wonderful word is worth protect", 10] as [Any]
+    let MessageArray = ["May the force be with you", "Live long and prosper","To infinity and beyond", "Space is big. you just won't believe how vastly, hugely, mindbogglinly big it is and the world is very big and huge wonderful word is worth protect"] as [Any]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,14 +26,10 @@ class ViewController: UIViewController {
     }
 
     @IBAction func changeColor(){
-        
+        now += 1
         if let temp = MessageArray[now%(MessageArray.count)] as? String{
             self.label1.text = MessageArray[now%(MessageArray.count)] as! String
-            now += 1
-        }else{
-            now += 2
         }
-        
     }
     
 }
