@@ -14,9 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var button1: UIButton!
     @IBOutlet var view1: UIView!
     
-    var now : Int = 0
-    let MessageArray = ["May the force be with you", "Live long and prosper",101,"To infinity and beyond", "Space is big. you just won't believe how vastly, hugely, mindbogglinly big it is and the world is very big and huge wonderful word is worth protect", 10] as [Any]
-    
+    var lightOn = true
     override func viewDidLoad() {
         super.viewDidLoad()
         label1.lineBreakMode = .byWordWrapping
@@ -26,14 +24,21 @@ class ViewController: UIViewController {
     }
 
     @IBAction func changeColor(){
-        now+=1
-        if let temp = MessageArray[now%(MessageArray.count)] as? String{
-            self.label1.text = MessageArray[now%(MessageArray.count)] as! String
-        }else{
-            now += 1
+        
+        if(lightOn){
+            button1.setTitle("OFF",for: .normal)
+            label1.text = "WHITE"
+            label1.textColor = UIColor.white
+            view1.backgroundColor = UIColor.black
+            lightOn = false
         }
-        
-        
+        else{
+            button1.setTitle("ON",for:.normal)
+            label1.text = "BLACK"
+            label1.textColor = UIColor.black
+            view.backgroundColor = UIColor.white
+            lightOn = true
+        }
     }
     
 }
