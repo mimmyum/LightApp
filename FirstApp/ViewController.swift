@@ -27,21 +27,21 @@ class ViewController: UIViewController {
     
     override var preferredStatusBarStyle: UIStatusBarStyle{
         if(lightOn && check){
-            
             return .lightContent
-            
-        }
-        else{
+        }else{
             check = true
             return .default
         }
-        
     }
-    
     
 
     @IBAction func changeColor(){
         
+        UIUpdate()
+        lightOn = !lightOn
+    }
+    
+    func UIUpdate(){
         if(lightOn){
             button1.setTitle("OFF",for: .normal)
             label1.text = "WHITE"
@@ -57,7 +57,6 @@ class ViewController: UIViewController {
             
         }
         setNeedsStatusBarAppearanceUpdate()
-        lightOn = !lightOn
     }
     
 }
